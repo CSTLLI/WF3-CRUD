@@ -39,14 +39,13 @@
 			</div>
 		</header>
 
-
 <?php 
 
-function checkInput($input){
-	if (isset($input) && !empty($input)){
-		return 1;
+	function checkInput($input){
+		if (isset($input) && !empty($input)){
+			return 1;
+		}
+		return 0;
 	}
-	return 0;
-}
 
 ?>
