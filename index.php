@@ -47,8 +47,8 @@
 				echo		"<td>". $guitare['prix'] . "</td>";
 				echo		"<td>". $guitare['categorie'] . "</td>";
 				echo		"<td>". $guitare['nb_cordes'] . "</td>";
-				echo		"<td><a href='edit_item.php?id=" . $guitare['id'] . "'><i class='bi bi-pencil-square'></i></a></td>";
-				echo		"<td><a href='delete_item.php?id=" . $guitare['id'] . "'><i class='bi bi-trash3'></i></a></td>";
+				echo		"<td><a href='item/edit_item.php?id=" . $guitare['id'] . "'><i class='bi bi-pencil-square'></i></a></td>";
+				echo		"<td><a href='item/delete_item.php?id=" . $guitare['id'] . "'><i class='bi bi-trash3'></i></a></td>";
 				echo 	"</tr>";
 			}
 		

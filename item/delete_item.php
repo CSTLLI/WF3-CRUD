@@ -13,8 +13,8 @@
 
 <?php
 
-include_once "header.php";
-include_once "config.php";
+include_once "../header.php";
+include_once "../config.php";
 
 $item_id = intval($_GET['id']);
 
