@@ -13,8 +13,8 @@
 
 <?php 
 
-include_once "../header.php";
-include_once "../config.php";
+include_once "../setup/header.php";
+include_once "../setup/config.php";
 
 try{
 
@@ -32,7 +32,7 @@ try{
 			<div class="text-center mb-5 text-dark"></div>
 				<div class="card mx-auto w-50">
 
-					<form action="" method="post" class="card-body cardbody-color p-lg-5">
+					<form method="post" class="card-body cardbody-color p-lg-5">
 
 						<h2 class="text-center text-dark">Modifier les données d'une guitare dans la Base de Données</h2>
 						<div class="mb-2">
@@ -44,14 +44,14 @@ try{
 						</div>
 
 						<div class="mb-2">
-							<input type="number" class="form-control" name="annee_fabrication" id="annee_fabrication" value="<?=$result['annee']?>" placeholder="Année de fabrication">
+							<input type="number" class="form-control" name="annee" id="annee" value="<?=$result['annee']?>" placeholder="Année de fabrication">
 						</div>
 
 						<div class="mb-2">
 							<input type="number" class="form-control" name="prix" id="prix" value="<?=$result['prix']?>" placeholder="Prix">
 						</div>
 
-						<select name="checkbox" class="mb-2 form-select" aria-label="Default select example">
+						<select name="categorie2" class="mb-2 form-select" aria-label="Default select example">
 							<!-- <option value="default">Sélectionner un type de guitare</option>
 							<option value="electrique">electrique</option>
 							<option value="acoustique">acoustique</option>
@@ -79,7 +79,7 @@ try{
 						</div>
 
 						<div class="text-center">
-							<button type="submit" class="btn btn-danger px-5 mb-5 text-uppercase">Envoyer</button>
+							<input name="button" type="submit" value="Envoyer" class="btn btn-danger px-5 mb-5 text-uppercase">
 						</div>
 					</form>
 				</div>
@@ -88,3 +88,38 @@ try{
 	</body>
 </html>
 
+<?php 
+
+if (isset($_POST['button'])){
+
+	$modele = htmlspecialchars($_POST['modele']);
+	$annee = htmlspecialchars($_POST['annee']);
+	$prix = htmlspecialchars($_POST['prix']);
+	$categorie2 = trim($_POST['categorie2']);
+	$nb_cordes = htmlspecialchars($_POST['nb_cordes']);
+
+	// echo "modele :" . $modele;
+	// echo "annee :" . $annee;
+	// echo "prix :" . $prix;
+	// echo "categorie :" . $categorie;
+	// echo gettype($categorie);
+	// echo "nb_cordes :" . $nb_cordes;
+
+	// echo "UPDATE guitare SET modele = '{$modele}',
+	// annee = '{$annee}',
+	// prix = '{$prix}',
+	// categorie = '{$categorie2}',
+	// nb_cordes = '{$nb_cordes}'
+	
+	// WHERE id = '{$item_id}'";
+
+	$sth1 = $conn -> query("UPDATE guitare SET modele = '{$modele}',
+										   annee = '{$annee}',
+										   prix = '{$prix}',
+										   categorie = '{$categorie2}',
+										   nb_cordes = '{$nb_cordes}'
+										   
+										   WHERE id = '{$item_id}'");
+}
+	
+?>

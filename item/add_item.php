@@ -12,7 +12,7 @@
 <!--**************************************************************************************-->
 
 
-		<?php include_once "../header.php"; ?>
+		<?php include_once "../setup/header.php"; ?>
 
 		<main>
 				<div class="card my-5 mx-auto w-50 text-center text-dark">
@@ -61,7 +61,7 @@
 
 <?php 
 
-include_once "../config.php";
+include_once "../setup/config.php";
 
 if (empty($_POST['fabricant']) && empty($_POST['modele']) && empty($_POST['checkbox'])){
 	die();
@@ -84,7 +84,7 @@ if (checkInput($_POST['fabricant']) && checkInput($_POST['modele']) && $_POST['c
 			$sth = $conn->query("INSERT IGNORE INTO guitare (fabricant, modele, annee, prix, categorie, nb_cordes) VALUES ('$fabricant', '$modele', '$annee', '$prix', '$categorie', '$nb_cordes')");
 
 			if ($sth){
-				header("Location: ../index.php");				
+				header("Location: //crud.test");				
 			}
 
 			

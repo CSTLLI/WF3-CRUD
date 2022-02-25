@@ -13,8 +13,8 @@
 
 <?php
 
-include_once "../header.php";
-include_once "../config.php";
+include_once "../setup/header.php";
+include_once "../setup/config.php";
 
 $item_id = intval($_GET['id']);
 
@@ -44,5 +44,4 @@ try {
 		echo "<div class='container alert alert-danger' role='alert'> Une erreur est survenue. </div>";
 		echo $e->getMessage();
 }
-
 ?>

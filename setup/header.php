@@ -26,20 +26,24 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 		<!-- Intégration du style css -->
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="//crud.test/setup/style.css" >
+
+		<link rel="javascript/script" href="//crud.test/setup/script.js" >
 	</head>
 
 	<body>
 
 		<header>
 			<div class="d-flex justify-content-between">
-				<a class="my-auto text-uppercase" href="index.php">Base de données Guitare</a>
+				<a class="my-auto text-uppercase" href="//crud.test/" >Base de données Guitare</a>
 
-				<a class="button my-auto p-3" href="add_item.php">Ajout d'une guitare</a>
+				<a class="button my-auto p-3" href="//crud.test/item/add_item.php">Ajout d'une guitare</a>
 			</div>
 		</header>
 
 <?php 
+
+
 
 	function checkInput($input){
 		if (isset($input) && !empty($input)){

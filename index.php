@@ -13,9 +13,9 @@
 
 		<main>
 			<?php 
-			
-			include_once "header.php"; 
-			include_once "config.php";
+
+			include_once "./setup/header.php";
+			include_once "./setup/config.php";
 			
 			echo "
 				<table class='table table-hover table-dark w-75 mx-auto my-5 shadow-lg p-3 mb-5 bg-body rounded text-center'>
@@ -47,15 +47,14 @@
 				echo		"<td>". $guitare['prix'] . "</td>";
 				echo		"<td>". $guitare['categorie'] . "</td>";
 				echo		"<td>". $guitare['nb_cordes'] . "</td>";
-				echo		"<td><a href='item/edit_item.php?id=" . $guitare['id'] . "'><i class='bi bi-pencil-square'></i></a></td>";
-				echo		"<td><a href='item/delete_item.php?id=" . $guitare['id'] . "'><i class='bi bi-trash3'></i></a></td>";
+				echo		"<td><a href='//crud.test/item/edit_item.php?id=" . $guitare['id'] . "'><i class='bi bi-pencil-square'></i></a></td>";
+				echo		"<td><a href='//crud.test/item/delete_item.php?id=" . $guitare['id'] . "'><i class='bi bi-trash3'></i></a></td>";
 				echo 	"</tr>";
 			}
 		
 			echo "
 					</tbody>
 				</table>";
-
 			?>
 		</main>
 
