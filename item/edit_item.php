@@ -64,7 +64,7 @@ try{
 
 						for($i = 0; $i < count($values); $i++){
 							if ($values[$i] == $result['categorie']){
-								echo "<option value='" . $values[$i] . "' selected>" . $values[$i] . "</option>";
+								echo "<option value='" . $values[$i] . "' check>" . $values[$i] . "</option>";
 							}else{
 								echo "<option value=' " . $values[$i] . "'>" . $values[$i] . "</option>";
 							}
