@@ -11,9 +11,10 @@
 <!--                                                                     				  -->
 <!--**************************************************************************************-->
 
+<?php require_once "../setup/header.php";?>
 
-		<?php include_once "../setup/header.php"; ?>
-
+<html>
+	<body>
 		<main>
 				<div class="card my-5 mx-auto w-50 text-center text-dark">
 
@@ -59,9 +60,9 @@
 	</body>
 </html>
 
-<?php 
-
+<?php
 include_once "../setup/config.php";
+header("Location: papa");
 
 if (empty($_POST['fabricant']) && empty($_POST['modele']) && empty($_POST['checkbox'])){
 	die();
@@ -79,14 +80,7 @@ if (checkInput($_POST['fabricant']) && checkInput($_POST['modele']) && $_POST['c
 		$nb_cordes = $_POST['nb_cordes'];
 
 		try {
-			//echo $categorie;
-
-			$sth = $conn->query("INSERT IGNORE INTO guitare (fabricant, modele, annee, prix, categorie, nb_cordes) VALUES ('$fabricant', '$modele', '$annee', '$prix', '$categorie', '$nb_cordes')");
-
-			if ($sth){
-				header("Location: //crud.test");				
-			}
-
+			$sth = $conn->query("INSERT IGNORE INTO guitare (fabricant, modele, annee, prix, categorie, nb_cordes) VALUES ('$fabricant', '$modele', '$annee', '$prix', '$categorie', '$nb_cordes')");				
 			
 		} catch(PDOException $e){
 				echo "<div class='container alert alert-danger' role='alert'> Une erreur est survenue. </div>";
@@ -97,5 +91,4 @@ if (checkInput($_POST['fabricant']) && checkInput($_POST['modele']) && $_POST['c
 }else{
 	echo "<div class='container alert alert-danger' role='alert'> Les noms sont vides. </div>";
 }
-
 ?>
